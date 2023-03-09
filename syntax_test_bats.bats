@@ -33,6 +33,10 @@ setup() {
 # <- meta.block.test-block punctuation.section.braces.end
 #^ - meta.block
 
+@test # simulate adding a test in the middle of the file but not finished typing yet
+# ^^^ keyword.declaration.function.test-block
+#     ^ comment.line.number-sign punctuation.definition.comment
+
 @test "addition using dc" {
 # ^^^ keyword.declaration.function.test-block
   result="$(echo 2 2+p | dc)"

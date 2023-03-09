@@ -23,15 +23,19 @@ contexts:
     - match: ^\s*(@test)\b
       captures:
         1: keyword.declaration.function.test-block.bats
-      push: test-name-string
+      push: expect-test-name-string
 
-  test-name-string:
+  expect-test-name-string:
     - match: \'
       scope: punctuation.definition.string.begin.bats
       set: test-name-string-single-quoted
     - match: \"
       scope: punctuation.definition.string.begin.bats
       set: test-name-string-double-quoted
+    - match: (?=\{)
+      set: expect-braces
+    - match: (?=\S)
+      pop: true
 
   test-name-string-single-quoted:
     - meta_scope: meta.string.bats string.quoted.single.bats
