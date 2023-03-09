@@ -1,8 +1,8 @@
-# Sublime Bats
+# Sublime Bash Automated Testing System Package
 
-[![GitHub release](https://img.shields.io/github/release/sptndc/sublime-bats.svg)](https://github.com/sptndc/sublime-bats/releases) [![Package Control](https://img.shields.io/packagecontrol/dt/Bats.svg)](https://packagecontrol.io/packages/Bats)
+[![GitHub release](https://img.shields.io/github/release/SublimeText/bash-automated-testing-system.svg)](https://github.com/SublimeText/bash-automated-testing-system/releases) [![Package Control](https://img.shields.io/packagecontrol/dt/Bats.svg)](https://packagecontrol.io/packages/Bats)
 
-A [Bats](https://github.com/sstephenson/bats) test for Sublime Text.
+A [Bash Automated Testing System](https://github.com/bats-core/bats-core) package for Sublime Text.
 
 ## Installation
 
@@ -26,7 +26,7 @@ If you prefer a manual approach, follow the steps below.
 2. Clone this repository.
 
     ```
-    git clone https://github.com/sptndc/sublime-bats.git Bats
+    git clone git@github.com:SublimeText/bash-automated-testing-system.git Bats
     ```
 
 3. Enjoy!

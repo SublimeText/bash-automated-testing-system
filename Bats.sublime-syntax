@@ -4,8 +4,10 @@
 --- #--------------------------------------------------------------------------
 
 name: Bash Automated Testing System (bats)
-
-scope: source.shell.bats
+scope: source.shell.bash.bats
+version: 2
+extends: Packages/ShellScript/Bash.sublime-syntax
+first_line_match: '#!/usr/bin/env\s+bats$'
 
 file_extensions:
   - bats
@@ -13,25 +15,44 @@ file_extensions:
 #------------------------------------------------------------------------------
 contexts:
 
-  main:
+  statements:
+    - meta_prepend: true
     - include: test-block
-    - include: scope:source.shell.bash
-
-  prototype:
-    - include: scope:source.shell.bash#prototype
 
   test-block:
-    - match: (?<=\s|^)(@test)\s+(\"|\')(.*)(\"|\')(?=\s|$)
+    - match: ^\s*(@test)\b
       captures:
-        1: storage.type.test-block.bats
-        2: punctuation.definition.string.begin.bats
-        3: entity.name.test-block.bats
-        4: punctuation.definition.string.end.bats
+        1: keyword.declaration.function.test-block.bats
+      push: test-name-string
+
+  test-name-string:
+    - match: \'
+      scope: punctuation.definition.string.begin.bats
+      set: test-name-string-single-quoted
+    - match: \"
+      scope: punctuation.definition.string.begin.bats
+      set: test-name-string-double-quoted
+
+  test-name-string-single-quoted:
+    - meta_scope: meta.string.bats string.quoted.single.bats
+    - match: \'
+      scope: punctuation.definition.string.end.bats
+      set: expect-braces
+
+  test-name-string-double-quoted:
+    - meta_scope: meta.string.bats string.quoted.double.bats
+    - match: \"
+      scope: punctuation.definition.string.end.bats
+      set: expect-braces
+
+  expect-braces:
     - match: \{
       scope: punctuation.section.braces.begin.bats
       push:
-        - meta_content_scope: meta.test-block.bats
+        - meta_scope: meta.block.test-block.bats
         - match: \}
           scope: punctuation.section.braces.end.bats
           pop: true
-        - include: main
+        - include: statements
+    - match: (?=\S)
+      pop: true
