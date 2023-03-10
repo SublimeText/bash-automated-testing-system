@@ -7,13 +7,13 @@
 >===>>=>  >=>        >=>      >=>       >=>>=>  
 
 
-!!! Thank you for installing sublime-bats !!!
+!!! Thank you for installing Bash Automated Testing System for Sublime !!!
 
 
 For information about this package, please see:
 
-https://github.com/sptndc/sublime-bats
+https://github.com/SublimeText/bash-automated-testing-system
 
-For issues or feature requests, create a report that leads to:
+For issues or feature requests, create a report at:
 
-https://github.com/sptndc/sublime-bats/issues
+https://github.com/SublimeText/bash-automated-testing-system/issues

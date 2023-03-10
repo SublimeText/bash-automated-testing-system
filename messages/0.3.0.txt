@@ -1,0 +1,6 @@
+Sublime Bash Automated Testing Framework 0.3.0
+==============================================
+
+User facing changes:
+* Fixed syntax highlighting for Sublime Text 4.
+* Dropped support for Sublime Text 3.

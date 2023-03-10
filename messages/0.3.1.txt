@@ -1,0 +1,8 @@
+Sublime Bash Automated Testing Framework 0.3.1
+==============================================
+
+User facing changes:
+* Now using the standard build system instead of a custom Python plugin
+
+Other changes:
+* Package no longer includes `.no-sublime-package` file.
